@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-12">
+      <div class="card mx-auto">
+        <p class="heading">PAYMENT DETAILS</p>
+        <form class="card-details ">
+          <div class="form-group">
+            <p class="text-warning">Cardholder's Name</p>
+            <div class="form-input-section" [ngClass]="{'input-error': paymentValidationMessage.cardholdername}">
+              <input
+                type="text"
+                name="cardholdername"
+                class="form-control form-field"
+                placeholder="Card Holder Name"
+                (keyup)="changeCardHolderName($event)"
+                (focus)="cardHolderNameFieldFocus()"
+                (focusout)="validateStripPaymentForm()"
+              >
+            </div>
+            <span class="input-status" [ngClass]="{'input-error': paymentValidationMessage.cardholdername}">{{paymentValidationMessage?.cardholdername}}</span>
+          </div>
+          <div class="form-group">
+            <p class="text-warning">Card Number</p>
+            <div class="form-input-section" [ngClass]="{'input-error': paymentValidationMessage.cardnumber}">
+
+              <div id="pay-card-number" class="field empty"></div>
+
+              <span class="input-status" [ngClass]="{'input-error': paymentValidationMessage.cardnumber}">{{paymentValidationMessage?.cardnumber}}</span>
+            </div>
+          </div>
+          <div class="form-group pt-2">
+            <div class="row d-flex">
+              <div class="col-sm-8">
+                <p class="text-warning">Expiration</p>
+                <div class="form-input-section" [ngClass]="{'input-error': paymentValidationMessage.exp_date}">
+
+                  <div id="pay-card-expiry" class="field empty third-width"></div>
+
+                  <span class="input-status" [ngClass]="{'input-error': paymentValidationMessage.exp_date}">{{paymentValidationMessage?.exp_date}}</span>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <p class="text-warning">Cvv</p>
+                <div class="form-input-section" [ngClass]="{'input-error': paymentValidationMessage.cvc}">
+
+                  <div id="pay-card-cvc" class="field empty third-width"></div>
+
+                  <span class="input-status" [ngClass]="{'input-error': paymentValidationMessage.cvc}">{{paymentValidationMessage?.cvc}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-12 text-center">
+            <button type="button" class="btn btn-primary" (click)="submitPaymentForm()" [disabled]="isPaymentProcessing">
+              <ng-Container *ngIf="!isPaymentProcessing">Pay</ng-Container>
+              <ng-Container *ngIf="isPaymentProcessing">Processing...</ng-Container>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

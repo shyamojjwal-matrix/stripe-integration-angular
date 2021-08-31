@@ -1,0 +1,75 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+// @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+// @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+
+// body {
+//     background: linear-gradient(to right, rgba(235, 224, 232, 1) 52%, rgba(254, 191, 1, 1) 53%, rgba(254, 191, 1, 1) 100%);
+//     font-family: 'Roboto', sans-serif
+// }
+
+.card {
+    border: none;
+    max-width: 450px;
+    border-radius: 15px;
+    margin: 150px 0 150px;
+    padding: 35px;
+    padding-bottom: 20px !important
+}
+
+.heading {
+    color: #C1C1C1;
+    font-size: 14px;
+    font-weight: 500
+}
+
+img {
+    transform: translate(160px, -10px)
+}
+
+img:hover {
+    cursor: pointer
+}
+
+.text-warning {
+    font-size: 12px;
+    font-weight: 500;
+    color: #edb537 !important
+}
+
+#cno {
+    transform: translateY(-10px)
+}
+
+input {
+    border-bottom: 1.5px solid #E8E5D2 !important;
+    font-weight: bold;
+    border-radius: 0;
+    border: 0
+}
+
+.form-group input:focus {
+    border: 0;
+    outline: 0
+}
+
+.col-sm-5 {
+    padding-left: 90px
+}
+
+.btn {
+    background: #F3A002 !important;
+    border: none;
+    border-radius: 5px;
+    min-width: 100px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.btn:focus {
+    box-shadow: none
+}
+
+span.input-status.input-error {
+    color: #ff0000;
+    font-size: 13px;
+}
